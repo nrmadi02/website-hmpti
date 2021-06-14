@@ -2,6 +2,7 @@ import {DuplicateIcon} from "@heroicons/react/solid";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {Loading} from "../../components";
+import LazyLoad from "react-lazyload";
 
 const postFeed = 6;
 let feed = [];
@@ -39,12 +40,14 @@ export default function Feed({feedData}) {
 				{dsc.map((data) => {
 					return (
 						<div className='relative' key={data.id}>
-							<Link href={data.url}>
-								<img
-									className='h-72 w-72 md:h-44 md:w-44 lg:h-96 lg:w-96 object-cover object-center'
-									src={data.sumber}
-								/>
-							</Link>
+							<LazyLoad>
+								<Link href={data.url}>
+									<img
+										className='h-72 w-72 md:h-44 md:w-44 lg:h-96 lg:w-96 object-cover object-center'
+										src={data.sumber}
+									/>
+								</Link>
+							</LazyLoad>
 							<DuplicateIcon className='text-white w-8 absolute top-2 right-2 ' />
 						</div>
 					);

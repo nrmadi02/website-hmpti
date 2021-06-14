@@ -1,18 +1,15 @@
-import {useEffect, useState, Fragment, useLayoutEffect} from "react";
+import {useState, Fragment, useLayoutEffect} from "react";
 import {Disclosure, Menu, Transition} from "@headlessui/react";
-import {
-	XIcon,
-	MenuIcon,
-	BellIcon,
-	UserCircleIcon,
-} from "@heroicons/react/outline";
+import {XIcon, MenuIcon, UserCircleIcon} from "@heroicons/react/outline";
 import {useRouter} from "next/router";
 import Link from "next/link";
+import axios from "axios";
+import {useAlert} from "react-alert";
 
 const navigation = [
 	{name: "Home", href: "/", current: true},
 	{name: "Profile", href: "/InfoPage", current: false},
-	{name: "Blog", href: "#", current: false},
+	{name: "Blog", href: "/Blog", current: false},
 	{name: "Informasi", href: "#", current: false},
 ];
 
@@ -22,6 +19,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
 	const router = useRouter();
+	const alert = useAlert();
 	const [sticky, setSticky] = useState(false);
 	const handleScroll = () => {
 		if (window.scrollY > 80) {
@@ -30,7 +28,13 @@ export default function Navbar() {
 			setSticky(false);
 		}
 	};
-
+	const onLogout = (e) => {
+		e.preventDefault();
+		axios.post("/api/logout").then(() => {
+			router.push("/");
+			alert.success("Logout Berhasil");
+		});
+	};
 	useLayoutEffect(() => {
 		window.addEventListener("scroll", handleScroll);
 
@@ -102,10 +106,6 @@ export default function Navbar() {
 											</div>
 										</div>
 										<div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
-											<button className='bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
-												<span className='sr-only'>View notifications</span>
-												<BellIcon className='h-6 w-6' aria-hidden='true' />
-											</button>
 											<Menu as='div' className='ml-3 relative'>
 												{({open}) => (
 													<>
@@ -131,34 +131,22 @@ export default function Navbar() {
 															>
 																<Menu.Item>
 																	{({active}) => (
-																		<a
-																			href='#'
-																			className={classNames(
-																				active ? "bg-gray-100" : "",
-																				"block px-4 py-2 text-sm text-gray-700"
-																			)}
-																		>
-																			Profile Kamu
-																		</a>
+																		<Link href='/Login'>
+																			<p
+																				className={classNames(
+																					active ? "bg-gray-100" : "",
+																					"block px-4 py-2 text-sm text-gray-700"
+																				)}
+																			>
+																				Profile Kamu
+																			</p>
+																		</Link>
 																	)}
 																</Menu.Item>
 																<Menu.Item>
 																	{({active}) => (
 																		<a
-																			href='#'
-																			className={classNames(
-																				active ? "bg-gray-100" : "",
-																				"block px-4 py-2 text-sm text-gray-700"
-																			)}
-																		>
-																			Pengaturan
-																		</a>
-																	)}
-																</Menu.Item>
-																<Menu.Item>
-																	{({active}) => (
-																		<a
-																			href='#'
+																			onClick={onLogout}
 																			className={classNames(
 																				active ? "bg-gray-100" : "",
 																				"block px-4 py-2 text-sm text-gray-700"
@@ -250,10 +238,6 @@ export default function Navbar() {
 									</div>
 								</div>
 								<div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
-									<button className='bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
-										<span className='sr-only'>View notifications</span>
-										<BellIcon className='h-6 w-6' aria-hidden='true' />
-									</button>
 									<Menu as='div' className='ml-3 relative'>
 										{({open}) => (
 											<>
@@ -279,34 +263,23 @@ export default function Navbar() {
 													>
 														<Menu.Item>
 															{({active}) => (
-																<a
-																	href='#'
-																	className={classNames(
-																		active ? "bg-gray-100" : "",
-																		"block px-4 py-2 text-sm text-gray-700"
-																	)}
-																>
-																	Profile Kamu
-																</a>
+																<Link href='/Login'>
+																	<p
+																		className={classNames(
+																			active ? "bg-gray-100" : "",
+																			"block px-4 py-2 text-sm text-gray-700"
+																		)}
+																	>
+																		Profile Kamu
+																	</p>
+																</Link>
 															)}
 														</Menu.Item>
+
 														<Menu.Item>
 															{({active}) => (
 																<a
-																	href='#'
-																	className={classNames(
-																		active ? "bg-gray-100" : "",
-																		"block px-4 py-2 text-sm text-gray-700"
-																	)}
-																>
-																	Pengaturan
-																</a>
-															)}
-														</Menu.Item>
-														<Menu.Item>
-															{({active}) => (
-																<a
-																	href='#'
+																	onClick={onLogout}
 																	className={classNames(
 																		active ? "bg-gray-100" : "",
 																		"block px-4 py-2 text-sm text-gray-700"

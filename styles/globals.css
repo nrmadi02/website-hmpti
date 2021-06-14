@@ -16,6 +16,11 @@
 	list-style-type: circle;
 }
 
+.body-content h1 {
+	font-size: 30px;
+	font-weight: 700;
+}
+
 .navbar-sticky {
 	animation: moveDown 0.5s ease-in-out;
 }

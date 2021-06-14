@@ -13,8 +13,12 @@ import PengurusInti from "./PengurusInti";
 import InfoPribadi from "./AtomComponents/InfoPribadi";
 import PengurusDivisi from "./PengurusDivisi";
 import InfoAnggota from "./AtomComponents/InfoAnggota";
+import FormLogin from "./FormLogin";
+import Post from "./Post";
 
 export {
+	Post,
+	FormLogin,
 	InfoAnggota,
 	PengurusDivisi,
 	InfoPribadi,

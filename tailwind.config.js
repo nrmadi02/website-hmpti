@@ -9,6 +9,7 @@ module.exports = {
 			},
 			backgroundImage: (theme) => ({
 				"bg-uniska": "url('/images/bg_img.jpeg')",
+				"bg-login": "url('/images/bg-login.svg')",
 			}),
 			animation: {
 				bounce200: "bounce 1s infinite 200ms",
@@ -19,5 +20,5 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/forms")],
 };
