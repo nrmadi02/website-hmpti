@@ -7,7 +7,6 @@ export default function Blog({post}) {
 	const [data, setData] = useState([]);
 	useEffect(() => {
 		setData(post);
-		console.log(data);
 	});
 	return (
 		<div className='font-quicksand px-5 bg-gray-700 w-auto max-h-full pt-20 pb-10 sm:px-0'>
