@@ -1,7 +1,15 @@
+import aos from "aos";
+import {useEffect} from "react";
+
 export default function VisiMisi() {
+	useEffect(() => {
+		aos.init({
+			duration: 2000,
+		});
+	}, []);
 	return (
-		<div className='w-11/12 sm:w-10/12 flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:space-x-6 mx-auto mt-4'>
-			<div>
+		<div className='overflow-hidden w-11/12 p-2 sm:w-10/12 flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:space-x-10 mx-auto mt-4'>
+			<div data-aos='fade-up-right'>
 				<p className='font-archivo text-2xl sm:text-5xl text-center'>Visi</p>
 				<div className='bg-blue-700 w-28 h-1 mx-auto'></div>
 				<div className='bg-gray-200 p-4 mt-4 rounded-md shadow-md'>
@@ -12,7 +20,7 @@ export default function VisiMisi() {
 					</p>
 				</div>
 			</div>
-			<div>
+			<div data-aos='fade-up-left'>
 				<p className='font-archivo text-2xl sm:text-5xl text-center'>Misi</p>
 				<div className='bg-blue-700 w-28 h-1 mx-auto'></div>
 				<div className='bg-gray-200 px-4 mt-4 rounded-md shadow-md'>
