@@ -21,7 +21,7 @@ const fetchData = async (url) =>
 			data: null,
 		}));
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const apiUrl = "https://api-hmpti.herokuapp.com/kepengurusans";
 	const apiDivisi = "https://api-hmpti.herokuapp.com/programs";
 	const response = await fetchData(apiUrl);

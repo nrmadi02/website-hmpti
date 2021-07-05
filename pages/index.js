@@ -27,7 +27,7 @@ const fetchData = async (url) =>
 			data: null,
 		}));
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const apiUrl = "https://api-hmpti.herokuapp.com/feeds";
 	const response = await fetchData(apiUrl);
 	const data = response.data;

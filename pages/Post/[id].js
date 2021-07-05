@@ -2,6 +2,19 @@ import Head from "next/head";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import ReactMarkdown from "react-markdown";
+import axios from "axios";
+
+const fetchData = async (url) =>
+	await axios
+		.get(url)
+		.then((res) => ({
+			error: false,
+			data: res.data,
+		}))
+		.catch(() => ({
+			error: true,
+			data: null,
+		}));
 
 export default function ViewPost({blogData}) {
 	const [data, setData] = useState([]);
@@ -52,21 +65,20 @@ export default function ViewPost({blogData}) {
 }
 
 export async function getStaticProps(context) {
-	const data = await fetch(
+	const data = await fetchData(
 		`https://api-hmpti.herokuapp.com/blogs/${context.params.id}`
 	);
-	const article = await data.json();
+	const article = await data.data;
 
 	return {
 		props: {
 			blogData: article,
 		},
-		revalidate: 1,
 	};
 }
 export async function getStaticPaths() {
-	const res = await fetch(`https://api-hmpti.herokuapp.com/blogs`);
-	const articles = await res.json();
+	const res = await fetchData(`https://api-hmpti.herokuapp.com/blogs`);
+	const articles = await res.data;
 
 	const paths = articles.map((item) => ({
 		params: {id: item.id.toString()},
