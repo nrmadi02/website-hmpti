@@ -63,8 +63,8 @@ export default function PengurusDivisi({
 										leaveTo='opacity-0 translate-y-1'
 									>
 										<Popover.Panel className='absolute  z-10 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl'>
-											<div className='overflow-hidden font-medium text-yellow-700 bg-yellow-100 p-2 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5'>
-												<p className='text-justify'>{detail}</p>
+											<div className='overflow-hidden font-medium text-yellow-700 bg-yellow-100 p-3 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5'>
+												<p>{detail}</p>
 											</div>
 										</Popover.Panel>
 									</Transition>

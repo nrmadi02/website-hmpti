@@ -1,6 +1,7 @@
 import Head from "next/head";
 import aos from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 import {
 	Informasi,
@@ -14,10 +15,22 @@ import {
 } from "../components";
 import {useEffect} from "react";
 
+const fetchData = async (url) =>
+	await axios
+		.get(url)
+		.then((res) => ({
+			error: false,
+			data: res.data,
+		}))
+		.catch(() => ({
+			error: true,
+			data: null,
+		}));
+
 export async function getStaticProps() {
 	const apiUrl = "https://api-hmpti.herokuapp.com/feeds";
-	const response = await fetch(apiUrl);
-	const data = await response.json();
+	const response = await fetchData(apiUrl);
+	const data = response.data;
 
 	return {
 		props: {
@@ -47,7 +60,7 @@ export default function Home({feedData}) {
 				<section>
 					<Jumbutron />
 				</section>
-				<section className='p-4 overflow-x-hidden'>
+				<section className='p-2'>
 					<article data-aos='fade-right'>
 						<p className='text-2xl sm:text-5xl text-center mt-5'>
 							Profile <span className='font-archivo'>HMP-TI</span>
@@ -55,7 +68,7 @@ export default function Home({feedData}) {
 						<div className='bg-blue-700 w-48 sm:w-96 h-1 mx-auto'></div>
 						<Profile />
 					</article>
-					<article data-aos='fade-left'>
+					<article>
 						<Visimisi />
 					</article>
 				</section>

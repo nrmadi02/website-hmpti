@@ -27,17 +27,10 @@ export default function ViewPost({blogData}) {
 				</p>
 				<p className='text-gray-300 text-center'>Post by - {data.penulis}</p>
 				<div className='flex justify-center mt-5'>
-					<div className='grid gap-3 text-sm grid-cols-2 grid-rows-2 sm:grid-cols-2'>
-						{blogData.tag_posts.map((item) => {
-							return (
-								<div
-									key={item.id}
-									className='bg-gray-300 rounded-md px-2 font-bold text-center'
-								>
-									<p>{item.tag}</p>
-								</div>
-							);
-						})}
+					<div>
+						<div className='bg-gray-300 rounded-md px-2 font-bold text-center'>
+							<p>{blogData.tag_utama}</p>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -10,7 +10,7 @@ const navigation = [
 	{name: "Home", href: "/", current: true},
 	{name: "Profile", href: "/InfoPage", current: false},
 	{name: "Blog", href: "/Blog", current: false},
-	{name: "Informasi", href: "#", current: false},
+	{name: "Informasi", href: "/Informasi", current: false},
 ];
 
 function classNames(...classes) {
@@ -94,7 +94,7 @@ export default function Navbar() {
 																	router.asPath == item.href
 																		? "bg-gray-900 text-white"
 																		: "text-gray-300 hover:bg-gray-700 hover:text-white",
-																	"px-3 py-2 rounded-md text-sm font-medium"
+																	"cursor-pointer px-3 py-2 rounded-md text-sm font-medium"
 																)}
 															>
 																{" "}
@@ -135,7 +135,7 @@ export default function Navbar() {
 																			<p
 																				className={classNames(
 																					active ? "bg-gray-100" : "",
-																					"block px-4 py-2 text-sm text-gray-700"
+																					"cursor-pointer block px-4 py-2 text-sm text-gray-700"
 																				)}
 																			>
 																				Profile Kamu
@@ -149,7 +149,7 @@ export default function Navbar() {
 																			onClick={onLogout}
 																			className={classNames(
 																				active ? "bg-gray-100" : "",
-																				"block px-4 py-2 text-sm text-gray-700"
+																				"cursor-pointer block px-4 py-2 text-sm text-gray-700"
 																			)}
 																		>
 																			Keluar
@@ -173,7 +173,7 @@ export default function Navbar() {
 														router.asPath == item.href
 															? "bg-gray-900 text-white"
 															: "text-gray-300 hover:bg-gray-700 hover:text-white",
-														"block px-3 py-2 rounded-md text-sm font-medium"
+														"cursor-pointer block px-3 py-2 rounded-md text-sm font-medium"
 													)}
 												>
 													{" "}
@@ -226,7 +226,7 @@ export default function Navbar() {
 															router.asPath == item.href
 																? "bg-gray-900 text-white"
 																: "text-gray-300 hover:bg-gray-700 hover:text-white",
-															"px-3 py-2 rounded-md text-sm font-medium"
+															" cursor-pointer px-3 py-2 rounded-md text-sm font-medium"
 														)}
 													>
 														{" "}
@@ -267,7 +267,7 @@ export default function Navbar() {
 																	<p
 																		className={classNames(
 																			active ? "bg-gray-100" : "",
-																			"block px-4 py-2 text-sm text-gray-700"
+																			"cursor-pointer block px-4 py-2 text-sm text-gray-700"
 																		)}
 																	>
 																		Profile Kamu
@@ -282,7 +282,7 @@ export default function Navbar() {
 																	onClick={onLogout}
 																	className={classNames(
 																		active ? "bg-gray-100" : "",
-																		"block px-4 py-2 text-sm text-gray-700"
+																		"cursor-pointer block px-4 py-2 text-sm text-gray-700"
 																	)}
 																>
 																	Keluar
@@ -306,7 +306,7 @@ export default function Navbar() {
 												router.asPath == item.href
 													? "bg-gray-900 text-white"
 													: "text-gray-300 hover:bg-gray-700 hover:text-white",
-												"block px-3 py-2 rounded-md text-sm font-medium"
+												"cursor-pointer block px-3 py-2 rounded-md text-sm font-medium"
 											)}
 										>
 											{" "}
