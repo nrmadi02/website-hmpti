@@ -1,3 +1,20 @@
+Assalamualaikum Wr Wb 
+
+Ini adalah salah satu dari hasil karya saya. yaitu website HMP-TI UNISKA MAB
+Fitur-fitur :
+1. Login
+2. User profile
+3. Feed seperti IG
+4. Blog
+5. Informasi
+6. CRUD Data
+7. Tailwind Design
+8. Ddibantu dengan handle CMS (STRAPI)
+
+Semoga Bisa bermanfaat dikemudian hari.
+Terima Kasih
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
