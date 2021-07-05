@@ -17,13 +17,13 @@ export default function Bidang() {
 		});
 	}, []);
 	return (
-		<div className='mt-5 p-4 sm:pt-20 bg-yellow-400 w-full sm:h-auto'>
+		<div className='mt-5 p-4 sm:pt-10 bg-yellow-400 w-full sm:h-auto'>
 			<p className='text-2xl sm:text-5xl text-center'>
 				Divisi <span className='font-archivo'>HMP-TI</span>
 			</p>
 			<div className='bg-white w-48 sm:w-96 h-1 mx-auto'></div>
-			<div className='flex flex-col sm:mt-16'>
-				<div className='grid-rows-2 grid-cols-2 gap-x-20 md:gap-x-24 gap-y-2 grid sm:grid-cols-4 w-1/2 mx-auto mt-10 sm:mt-20'>
+			<div className='flex flex-col sm:mt-10'>
+				<div className=' grid-cols-2 gap-x-20 md:gap-x-24 gap-y-2 grid md:grid-cols-4 w-1/2 mx-auto mt-10 sm:mt-10'>
 					<div data-aos='fade-up-left' className='flex items-center flex-col'>
 						<div className='w-24 ring-4 ring-white p-3 hover:bg-white'>
 							<BriefcaseIcon className='text-white hover:text-yellow-400' />
@@ -55,7 +55,7 @@ export default function Bidang() {
 				</div>
 				<div
 					data-aos='flip-up'
-					className='mx-auto grid-rows-3 mt-4 sm:-mt-20 md:gap-x-20 lg:gap-x-0 grid sm:grid-cols-3 w-2/5'
+					className='mb-10 mx-auto grid-cols-1 mt-10 md:gap-x-20 lg:gap-x-0 grid md:grid-cols-3 w-2/5'
 				>
 					<div className='flex items-center flex-col'>
 						<div className='w-24 ring-4 ring-white p-3 hover:bg-white'>

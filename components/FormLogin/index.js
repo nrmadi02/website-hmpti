@@ -35,7 +35,7 @@ export default function FormLogin() {
 			<div className='max-w-md w-full space-y-8'>
 				<div>
 					<img
-						className='mx-auto h-12 sm:h-28 w-auto'
+						className='hidden sm:block mx-auto h-12 sm:h-28 w-auto'
 						src='/icons/man.svg'
 						alt='Workflow'
 					/>
@@ -93,16 +93,6 @@ export default function FormLogin() {
 					</div>
 					<div>
 						{message && <p className='text-sm text-red-500'>{message}</p>}
-					</div>
-					<div className='flex items-center justify-end'>
-						<div className='text-sm'>
-							<a
-								href='#'
-								className='font-medium text-indigo-600 hover:text-indigo-500'
-							>
-								Lupa Password?
-							</a>
-						</div>
 					</div>
 
 					<div>

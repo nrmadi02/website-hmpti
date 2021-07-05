@@ -8,9 +8,16 @@ export default function Post({
 	penulis,
 	tagUtama,
 	id,
+	clickPost,
 }) {
+	const handleClick = () => {
+		clickPost(id);
+	};
 	return (
-		<div className='max-w-md sm:max-w-2xl mx-auto mb-7 overflow-hidden bg-gray-800 rounded-lg shadow-md '>
+		<div
+			onClick={handleClick}
+			className='max-w-md sm:max-w-2xl mx-auto mb-7 overflow-hidden bg-gray-800 rounded-lg hover:shadow-md '
+		>
 			<Link href={`/Post/${id}`}>
 				<img className='object-cover w-full h-64' alt='_post' src={sampul} />
 			</Link>

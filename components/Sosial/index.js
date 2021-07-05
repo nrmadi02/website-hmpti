@@ -1,6 +1,11 @@
 import {Feed} from "../../components";
+import {useRouter} from "next/router";
 
 export default function Sosial({feedData}) {
+	const route = useRouter();
+	const handleToIG = () => {
+		route.push("https://www.instagram.com/hmpti.uniska/");
+	};
 	return (
 		<div className='mt-7'>
 			<p className='text-center'>Kepo tentang HMP-TI ?</p>
@@ -27,10 +32,16 @@ export default function Sosial({feedData}) {
 					</div>
 				</div>
 				<div className='flex space-x-4 mt-4 ml-3'>
-					<button className='bg-blue-500 text-white py-1 px-5 rounded-md hover:bg-gray-800'>
+					<button
+						onClick={handleToIG}
+						className='cursor-pointer bg-blue-500 text-white py-1 px-5 rounded-md hover:bg-gray-800'
+					>
 						Ikuti
 					</button>
-					<button className='ring-1 ring-gray-300 bg-gray-100  py-1 px-5 rounded-md hover:bg-blue-400'>
+					<button
+						onClick={handleToIG}
+						className='cursor-pointer ring-1 ring-gray-300 bg-gray-100  py-1 px-5 rounded-md hover:bg-blue-400'
+					>
 						Kirim Pesan
 					</button>
 				</div>
