@@ -1,7 +1,7 @@
 import {Feed} from "../../components";
 import {useRouter} from "next/router";
 
-export default function Sosial({feedData}) {
+export default function Sosial() {
 	const route = useRouter();
 	const handleToIG = () => {
 		route.push("https://www.instagram.com/hmpti.uniska/");
@@ -47,7 +47,7 @@ export default function Sosial({feedData}) {
 				</div>
 			</div>
 			<div className='flex justify-center mt-5'>
-				<Feed feedData={feedData} />
+				<Feed />
 			</div>
 		</div>
 	);

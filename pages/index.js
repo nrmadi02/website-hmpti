@@ -1,7 +1,6 @@
 import Head from "next/head";
 import aos from "aos";
 import "aos/dist/aos.css";
-import axios from "axios";
 
 import {
 	Informasi,
@@ -14,30 +13,6 @@ import {
 	Navbar,
 } from "../components";
 import {useEffect} from "react";
-
-const fetchData = async (url) =>
-	await axios
-		.get(url)
-		.then((res) => ({
-			error: false,
-			data: res.data,
-		}))
-		.catch(() => ({
-			error: true,
-			data: null,
-		}));
-
-export async function getServerSideProps() {
-	const apiUrl = "https://api-hmpti.herokuapp.com/feeds";
-	const response = await fetchData(apiUrl);
-	const data = response.data;
-
-	return {
-		props: {
-			feedData: data,
-		},
-	};
-}
 
 export default function Home({feedData}) {
 	useEffect(() => {
@@ -76,7 +51,7 @@ export default function Home({feedData}) {
 					<Bidang />
 				</section>
 				<section className='px-10'>
-					<Sosial feedData={feedData} />
+					<Sosial />
 				</section>
 				<section>
 					<Informasi />

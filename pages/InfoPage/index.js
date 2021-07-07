@@ -7,27 +7,14 @@ import {
 	PengurusDivisi,
 } from "../../components";
 import Wave from "react-wavify";
-import axios from "axios";
 
-const fetchData = async (url) =>
-	await axios
-		.get(url)
-		.then((res) => ({
-			error: false,
-			data: res.data,
-		}))
-		.catch(() => ({
-			error: true,
-			data: null,
-		}));
-
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const apiUrl = "https://api-hmpti.herokuapp.com/kepengurusans";
 	const apiDivisi = "https://api-hmpti.herokuapp.com/programs";
-	const response = await fetchData(apiUrl);
-	const res = await fetchData(apiDivisi);
-	const data = await response.data;
-	const dataDivisi = await res.data;
+	const response = await fetch(apiUrl);
+	const res = await fetch(apiDivisi);
+	const data = await response.json();
+	const dataDivisi = await res.json();
 
 	return {
 		props: {
