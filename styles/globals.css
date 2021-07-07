@@ -34,6 +34,18 @@
 .navbar-sticky {
 	animation: moveDown 0.5s ease-in-out;
 }
+
+.container-video {
+	height: 300px;
+	overflow: hidden; /* 1:1 Aspect Ratio */
+}
+
+.responsive-iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
 @keyframes moveDown {
 	from {
 		transform: translateY(-5rem);
