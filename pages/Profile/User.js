@@ -23,13 +23,25 @@ export default function User({user}) {
 		fetcher
 	);
 	const saveProfilHandle = async () => {
-		const sendData = await axios.put(
-			`https://api-hmpti.herokuapp.com/user-profiles/${profile.id}`,
-			save,
-			{headers: {Authorization: "Bearer " + user.strapiToken}}
-		);
 		setLoading(true);
-		return sendData?.data;
+		await axios
+			.put(
+				`https://api-hmpti.herokuapp.com/user-profiles/${profile.id}`,
+				save,
+				{headers: {Authorization: "Bearer " + user.strapiToken}}
+			)
+			.then((data) => {
+				setProfile(data.data);
+				setSave({
+					nama: data.data.nama,
+					umur: data.data.umur,
+					email: data.data.email,
+					kota: data.data.kota,
+					provinsi: data.data.provinsi,
+					qoutes: data.data.qoutes,
+				});
+				setLoading(false);
+			});
 	};
 
 	const [dummy, setDummy] = useState([]);
@@ -45,7 +57,8 @@ export default function User({user}) {
 	});
 
 	useEffect(() => {
-		if (resData !== undefined && user) {
+		if ((resData !== undefined && user) || resData) {
+			console.log("1");
 			setDummy(resData);
 			const data = dummy.find((item) => item.email === user.email);
 			if (data !== undefined) {
@@ -61,7 +74,7 @@ export default function User({user}) {
 				setLoading(false);
 			}
 		}
-	}, [profile, dummy, setDummy, setProfile, resData, setSave]);
+	}, [resData, user, dummy]);
 
 	return (
 		<div className='font-quicksand'>

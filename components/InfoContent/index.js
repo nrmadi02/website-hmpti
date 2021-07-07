@@ -5,7 +5,7 @@ export default function InfoContent({info}) {
 	const [data, setData] = useState([]);
 	useEffect(() => {
 		setData(info[0]);
-	}, []);
+	}, [info]);
 	return (
 		<div className='-mt-8 h-screen'>
 			<div className='text-white mt-5 max-w-md sm:max-w-2xl mx-auto'>

@@ -3,32 +3,22 @@ import Link from "next/link";
 import Wave from "react-wavify";
 import {InfoContent} from "../../components";
 import axios from "axios";
+import useSWR from "swr";
+import {useEffect, useState} from "react";
 
-const fetchData = async (url) =>
-	await axios
-		.get(url)
-		.then((res) => ({
-			error: false,
-			data: res.data,
-		}))
-		.catch(() => ({
-			error: true,
-			data: null,
-		}));
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 
-export async function getServerSideProps() {
-	const apiUrl = "https://api-hmpti.herokuapp.com/informasis";
-	const response = await fetchData(apiUrl);
-	const data = await response.data;
-
-	return {
-		props: {
-			info: data,
-		},
-	};
-}
-
-export default function Informasi({info}) {
+export default function Informasi() {
+	const [info, setInfo] = useState([]);
+	const {data: resData} = useSWR(
+		"https://api-hmpti.herokuapp.com/informasis",
+		fetcher
+	);
+	useEffect(() => {
+		if (resData !== undefined) {
+			setInfo(resData);
+		}
+	}, [resData]);
 	return (
 		<div className='font-quicksand'>
 			<Head>

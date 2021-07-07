@@ -55,7 +55,7 @@ export default function Bidang() {
 				</div>
 				<div
 					data-aos='flip-up'
-					className='mb-10 mx-auto grid-cols-1 mt-10 md:gap-x-20 lg:gap-x-0 grid md:grid-cols-3 w-2/5'
+					className='mb-10 mx-auto grid-cols-1 mt-10 md:gap-x-24 lg:gap-x-0 grid md:grid-cols-3 w-2/5'
 				>
 					<div className='flex items-center flex-col'>
 						<div className='w-24 ring-4 ring-white p-3 hover:bg-white'>
