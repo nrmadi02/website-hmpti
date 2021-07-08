@@ -20,7 +20,16 @@ html {
 	list-style-type: circle;
 }
 
+.body-contnt ul {
+	list-style-type: square;
+}
+
+.body-content a {
+	color: rgb(78, 149, 255);
+}
+
 .body-content h1 {
+	margin-top: 15px;
 	font-size: 30px;
 	font-weight: 700;
 }
