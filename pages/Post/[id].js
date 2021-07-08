@@ -74,6 +74,7 @@ export async function getStaticProps(context) {
 		props: {
 			blogData: article,
 		},
+		revalidate: 5,
 	};
 }
 export async function getStaticPaths() {

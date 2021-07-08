@@ -65,14 +65,6 @@ export default function Informasi() {
 						</p>
 					</div>
 				)}
-				<div className='mt-5 text-center'>
-					<p className='text-white'>
-						© 2021{" "}
-						<span className='text-black font-bold hover:text-gray-500'>
-							<Link href='/'>HMP-TI UNISKA</Link>
-						</span>
-					</p>
-				</div>
 			</div>
 		</div>
 	);

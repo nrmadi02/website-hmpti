@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ReactMarkdown from "react-markdown";
 import ReactPlayer from "react-player/lazy";
+import Link from "next/link";
 
 export default function InfoContent({info}) {
 	const [data, setData] = useState([]);
@@ -15,22 +16,30 @@ export default function InfoContent({info}) {
 					<p>{data.judul}</p>
 				</div>
 				{data.link_video ? (
-					<div className='container-video mx-auto w-11/12 md:h-96 md:max-w-2xl'>
+					<div className='container-video mx-auto w-11/12 md:h-96 md:max-w-2xl rounded-md'>
 						{/* <ReactPlayer url='https://drive.google.com/file/d/1F0wpyDAR3HIegYYxHCtVM2moHaHUP76m/view?usp=sharing' /> */}
 						<iframe
 							src={data.link_video}
-							className='responsive-iframe'
+							className='responsive-iframe rounded-md ring-1 ring-white'
 							allow='autoplay'
 							allowFullScreen={true}
 						/>
 					</div>
 				) : null}
 			</div>
-			<div className='h-screen'>
+			<div>
 				<div className='text-white mt-5 max-w-md sm:max-w-2xl mx-auto'>
 					<div className='body-content'>
 						<ReactMarkdown>{data.isi}</ReactMarkdown>
 					</div>
+				</div>
+				<div className='mt-5 text-center'>
+					<p className='text-white'>
+						© 2021{" "}
+						<span className='text-black font-bold hover:text-gray-500'>
+							<Link href='/'>HMP-TI UNISKA</Link>
+						</span>
+					</p>
 				</div>
 			</div>
 		</>

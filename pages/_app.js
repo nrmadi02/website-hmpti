@@ -4,14 +4,19 @@ import {Loading} from "../components";
 import {transitions, positions, Provider as AlertProvider} from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import PageTransition from "../utils/PageTransition";
+import axios from "axios";
 
 function MyApp({Component, pageProps}) {
 	const [loading, setLoading] = useState(true);
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 4000);
-	});
+	useEffect(async () => {
+		await axios.get("https://api-hmpti.herokuapp.com/").then((res) => {
+			if (res.data) {
+				setTimeout(() => {
+					setLoading(false);
+				}, [2000]);
+			}
+		});
+	}, []);
 	const options = {
 		// you can also just use 'bottom center'
 		position: positions.BOTTOM_CENTER,
