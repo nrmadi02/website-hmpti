@@ -1,9 +1,9 @@
-import Head from "next/head";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {Post, Search, SearchModal} from "../../components";
 import {useRouter} from "next/router";
 import axios from "axios";
+import {NextSeo} from "next-seo";
 
 const fetchData = async (url) =>
 	await axios
@@ -40,7 +40,6 @@ export default function Blog({post, page, numberOfBlog, hasilSearch}) {
 
 	const handleClickPost = (id) => {
 		route.push(`/Post/${id}`);
-		realdata = [];
 	};
 
 	const pushLink = (data) => {
@@ -116,8 +115,19 @@ export default function Blog({post, page, numberOfBlog, hasilSearch}) {
 		setDataFilter(filteredData);
 	};
 
+	const SEO = {
+		title: "HMP-TI || BLOG",
+		description: "Blog HMP-TI Uniska",
+		openGraph: {
+			title: "HMP-TI || BLOG",
+			type: "website",
+			url: window.location.href,
+		},
+	};
+
 	return (
 		<>
+			<NextSeo {...SEO} />
 			<SearchModal
 				set={searchData}
 				setClick={() => setSearchData(false)}
@@ -125,10 +135,6 @@ export default function Blog({post, page, numberOfBlog, hasilSearch}) {
 				data={filterData}
 			/>
 			<div className='font-quicksand px-5 bg-gray-700 w-auto max-h-full pt-20 pb-5 sm:px-0'>
-				<Head>
-					<title>Blog HMP-TI</title>
-				</Head>
-
 				<div className='fixed top-4 left-4'>
 					<Link href='/'>
 						<p className='underline text-white text-xs cursor-pointer hover:text-gray-400'>

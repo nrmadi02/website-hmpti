@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import ReactMarkdown from "react-markdown";
-import ReactPlayer from "react-player/lazy";
 import Link from "next/link";
 
 export default function InfoContent({info}) {
@@ -17,7 +16,6 @@ export default function InfoContent({info}) {
 				</div>
 				{data.link_video ? (
 					<div className='container-video mx-auto w-11/12 md:h-96 md:max-w-2xl rounded-md'>
-						{/* <ReactPlayer url='https://drive.google.com/file/d/1F0wpyDAR3HIegYYxHCtVM2moHaHUP76m/view?usp=sharing' /> */}
 						<iframe
 							src={data.link_video}
 							className='responsive-iframe rounded-md ring-1 ring-white'

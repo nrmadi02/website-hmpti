@@ -25,7 +25,6 @@ export default function UserProfile({profile, saveData, save}) {
 						label='Nama'
 						nama='nama'
 						placeholder='Nama kamu..'
-						// defaultValue={data.nama ? data.nama : ""}
 						onChange={handleChange}
 						value={save.nama}
 					/>
@@ -34,7 +33,6 @@ export default function UserProfile({profile, saveData, save}) {
 						label='Umur'
 						nama='umur'
 						placeholder='Umur kamu..'
-						// defaultValue={data.umur ? data.umur : ""}
 						onChange={handleChange}
 						value={save.umur}
 					/>
@@ -45,7 +43,6 @@ export default function UserProfile({profile, saveData, save}) {
 						label='Email'
 						nama='email'
 						placeholder='Email kamu..'
-						// defaultValue={data.email ? data.email : ""}
 						onChange={handleChange}
 						value={save.email}
 						disabled={true}
@@ -57,7 +54,6 @@ export default function UserProfile({profile, saveData, save}) {
 						label='Kota'
 						nama='kota'
 						placeholder='Kota kamu..'
-						// defaultValue={data.kota ? data.kota : ""}
 						onChange={handleChange}
 						value={save.kota}
 					/>
@@ -66,7 +62,6 @@ export default function UserProfile({profile, saveData, save}) {
 						label='Provinsi'
 						nama='provinsi'
 						placeholder='Provinsi kamu..'
-						// defaultValue={data.provinsi ? data.provinsi : ""}
 						onChange={handleChange}
 						value={save.provinsi}
 					/>

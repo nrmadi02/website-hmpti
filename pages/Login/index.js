@@ -1,7 +1,7 @@
-import Head from "next/head";
 import {FormLogin, Loading} from "../../components";
 import {ChevronLeftIcon} from "@heroicons/react/solid";
 import Link from "next/link";
+import {NextSeo} from "next-seo";
 import {withSession} from "../../middlewares/session";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
@@ -16,8 +16,20 @@ export default function Login({user}) {
 			setLoading(false);
 		}
 	}, []);
+
+	const SEO = {
+		title: "LOGIN",
+		description:
+			"Masuk ke profile, masuk ke dashboard HMP-TI, User Profile HMP-TI",
+		openGraph: {
+			title: "LOGIN",
+			type: "website",
+			url: window.location.href,
+		},
+	};
 	return (
 		<>
+			<NextSeo {...SEO} />
 			{loading ? (
 				<div className='h-screen bg-indigo-400 flex flex-col justify-center items-center'>
 					<div className='flex flex-col justify-start items-center space-y-4'>
@@ -31,10 +43,6 @@ export default function Login({user}) {
 				</div>
 			) : (
 				<div className='font-quicksand'>
-					<Head>
-						<title>Profile HMP-TI</title>
-						<link rel='icon' href='/favicon.ico' />
-					</Head>
 					<div className='bg-bg-login bg-no-repeat bg-cover h-screen bg-center'>
 						<div className='h-screen items-center justify-center'>
 							<div className='flex justify-center h-screen items-center'>

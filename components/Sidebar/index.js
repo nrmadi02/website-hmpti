@@ -69,7 +69,7 @@ export default function Sidebar({profile}) {
 				<div onClick={() => setMenu(true)} className='h-7 w-7 text-gray-700'>
 					<MenuIcon />
 				</div>
-				<div className='flex-shrink-0 flex items-center '>
+				<div className='flex items-center '>
 					<img
 						className='h-10 w-auto logo'
 						src='/images/logo.png'
@@ -77,19 +77,7 @@ export default function Sidebar({profile}) {
 					/>
 					<p className='font-archivo block md:hidden text-4xl ml-2'>HMP-TI</p>
 				</div>
-				{data.length !== 0 ? (
-					data.foto ? (
-						<img
-							src={data.foto.url}
-							alt='_profile'
-							className='h-6 w-6 rounded-full'
-						/>
-					) : (
-						<UserCircleIcon className='h-6 w-6 text-gray-600' />
-					)
-				) : (
-					<UserCircleIcon className='h-6 w-6 text-gray-600' />
-				)}
+				<div className='h-7 w-7'></div>
 			</div>
 			<div className={`md:hidden ${menu ? "" : "hidden"}`}>
 				<div className='fixed inset-0 flex z-40'>

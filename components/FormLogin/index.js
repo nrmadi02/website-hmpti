@@ -8,8 +8,6 @@ export default function FormLogin() {
 	const router = useRouter();
 	const alert = useAlert();
 	const [message, setMessage] = useState(null);
-	// const [username, setUsername] = useState("");
-	// const [password, SetPassword] = useState("");
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
@@ -27,7 +25,6 @@ export default function FormLogin() {
 				setMessage("NPM atau Password anda salah");
 				alert.error("NPM or Password wrong");
 			}
-			// router.push("/Profile");
 		}
 	};
 	return (
@@ -52,27 +49,19 @@ export default function FormLogin() {
 						</a>
 					</p>
 				</div>
-				<form
-					className='mt-8 space-y-6'
-					method='post'
-					// action='/api/login'
-					onSubmit={onSubmit}
-				>
-					{/* <input type='hidden' name='remember' defaultValue='true' /> */}
+				<form className='mt-8 space-y-6' method='post' onSubmit={onSubmit}>
 					<div className='rounded-md shadow-sm -space-y-px'>
 						<div>
 							<label htmlFor='nama' className='sr-only'>
 								NPM
 							</label>
 							<input
-								// onChange={(event) => setUsername(event.target.value)}
-								// value={username}
 								id='username'
 								name='username'
 								type='text'
 								required
 								className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'
-								placeholder='NPM Anda'
+								placeholder='Username atau Email Anda'
 							/>
 						</div>
 						<div>
@@ -80,8 +69,6 @@ export default function FormLogin() {
 								Password
 							</label>
 							<input
-								// onChange={(event) => SetPassword(event.target.value)}
-								// value={password}
 								id='password'
 								name='password'
 								type='password'
