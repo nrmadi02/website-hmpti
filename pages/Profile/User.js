@@ -39,6 +39,7 @@ export default function User({user}) {
 					kota: data.data.kota,
 					provinsi: data.data.provinsi,
 					qoutes: data.data.qoutes,
+					foto: data.data.foto,
 				});
 				setLoading(false);
 			});
@@ -54,6 +55,7 @@ export default function User({user}) {
 		kota: "",
 		provinsi: "",
 		qoutes: "",
+		foto: {},
 	});
 
 	useEffect(() => {
@@ -69,6 +71,7 @@ export default function User({user}) {
 					kota: data.kota,
 					provinsi: data.provinsi,
 					qoutes: data.qoutes,
+					foto: data.foto,
 				});
 				setLoading(false);
 			}
@@ -114,15 +117,17 @@ export default function User({user}) {
 						<div className='relative bg-gray-200 grid px-5 md:px-10'>
 							<div className='bg-white rounded-md shadow-lg -mt-28 flex justify-center pb-5 px-5 md:px-0'>
 								<div className='flex flex-col items-center w-full'>
-									{profile.length !== 0 && profile.foto ? (
-										<img
-											className='bg-white h-40 w-40 -mt-14 ring-4 ring-gray-500 rounded-full'
-											src={profile.foto.url}
-											alt='_blank'
-										/>
-									) : (
-										<UserCircleIcon className='bg-white h-40 w-40 -mt-14 ring-4 ring-gray-400 rounded-full' />
-									)}
+									<div>
+										{profile.length !== 0 && profile.foto ? (
+											<img
+												className='bg-white h-40 w-40 -mt-14 ring-4 ring-gray-500 rounded-full'
+												src={profile.foto.url}
+												alt='_blank'
+											/>
+										) : (
+											<UserCircleIcon className='bg-white h-40 w-40 -mt-14 ring-4 ring-gray-400 rounded-full' />
+										)}
+									</div>
 									<div className='text-lg text-gray-500 mt-5 flex flex-col items-center'>
 										<p>
 											<span className='font-bold'>
@@ -151,22 +156,22 @@ export default function User({user}) {
 								</div>
 							</div>
 							<div className='bg-gray-100 rounded-md shadow-lg mt-10  flex flex-col justify-center pb-5 md:px-0 mb-5'>
-								<div
-									onClick={saveProfilHandle}
-									className='bg-white rounded-t-md flex justify-between items-center w-full px-5 py-5'
-								>
+								<div className='bg-white rounded-t-md flex justify-between items-center w-full px-5 py-5'>
 									<p className='text-xl font-bold text-gray-600'>Akun Saya</p>
 									{loading ? (
 										<Loading />
 									) : (
-										<div className='shadow-lg cursor-pointer hover:bg-blue-200 rounded-md p-2 bg-blue-500 text-white'>
+										<div
+											onClick={saveProfilHandle}
+											className='shadow-lg cursor-pointer hover:bg-blue-200 rounded-md p-2 bg-blue-500 text-white text-xs'
+										>
 											<p>Save Profile</p>
 										</div>
 									)}
 								</div>
 								<UserProfile profile={profile} saveData={setSave} save={save} />
 							</div>
-							<div className='bg-gray-200 px-5 pt-5 pb-10'>
+							<div className='bg-gray-200 pt-5 pb-10'>
 								<DashFooter />
 							</div>
 						</div>

@@ -25,8 +25,10 @@ import Input from "./AtomComponents/Input";
 import TextareaInput from "./AtomComponents/TextareaInput";
 import Search from "./Search";
 import SearchModal from "./SearchModal";
+import BlogsEdit from "./BlogsEdit";
 
 export {
+	BlogsEdit,
 	Search,
 	SearchModal,
 	TextareaInput,

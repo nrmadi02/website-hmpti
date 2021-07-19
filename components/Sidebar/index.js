@@ -31,16 +31,10 @@ const navigation = [
 		icon: <UserIcon className='h-6 w-6 text-yellow-500' />,
 	},
 	{
-		name: "Buku Besar",
-		href: "/Profile/BukuBesar",
+		name: "Blog",
+		href: "/Profile/Blog",
 		current: false,
 		icon: <BookOpenIcon className='h-6 w-6 text-green-500' />,
-	},
-	{
-		name: "Informasi",
-		href: "/Profile/Info",
-		current: false,
-		icon: <InformationCircleIcon className='h-6 w-6 text-blue-500' />,
 	},
 ];
 
