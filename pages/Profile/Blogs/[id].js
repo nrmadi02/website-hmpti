@@ -77,7 +77,7 @@ export default function EditBlogs({idBlogs, user}) {
 		sampul: {},
 	});
 	useEffect(() => {
-		if ((resData !== undefined && user) || resData || blogData) {
+		if ((resData !== undefined && user) || resData) {
 			if (blogData !== undefined) {
 				setBlogs(blogData);
 				setSave({

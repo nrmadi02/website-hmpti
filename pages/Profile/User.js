@@ -114,7 +114,7 @@ export default function User({user}) {
 								</p>
 							</div>
 						</div>
-						<div className='relative bg-gray-200 grid px-5 md:px-10'>
+						<div className='relative bg-gray-200 flex flex-col px-5 md:px-10'>
 							<div className='bg-white rounded-md shadow-lg -mt-28 flex justify-center pb-5 px-5 md:px-0'>
 								<div className='flex flex-col items-center w-full'>
 									<div>
