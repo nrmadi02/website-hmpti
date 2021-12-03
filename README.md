@@ -11,7 +11,7 @@ Fitur-fitur :
 5. Informasi
 6. CRUD Data
 7. Tailwind Design
-8. Ddibantu dengan handle CMS (STRAPI)
+8. Dibantu dengan handle CMS (STRAPI)
 
 Test Login :
 username : 19630674
