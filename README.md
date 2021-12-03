@@ -1,5 +1,7 @@
 Assalamualaikum Wr Wb 
 
+Website harus ditunggu 10-30 detik, karena backend masih menggunakan server heroku.
+
 Ini adalah salah satu dari hasil karya saya. yaitu website HMP-TI UNISKA MAB
 Fitur-fitur :
 1. Login
