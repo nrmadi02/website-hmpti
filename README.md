@@ -11,6 +11,10 @@ Fitur-fitur :
 7. Tailwind Design
 8. Ddibantu dengan handle CMS (STRAPI)
 
+Test Login :
+username : 19630674
+pw : 12345678
+
 Semoga Bisa bermanfaat dikemudian hari.
 Terima Kasih
 
