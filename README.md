@@ -1,4 +1,4 @@
-Assalamualaikum Wr Wb 
+test merubah
 
 Website harus ditunggu 10-30 detik, karena backend masih menggunakan server heroku.
 
@@ -11,8 +11,7 @@ Fitur-fitur :
 5. Informasi
 6. CRUD Data
 7. Tailwind Design
-8. Dibantu dengan handle CMS (STRAPI)
-
+8. Dibantu dengan handle CMS (STRA
 Test Login :
 username : 19630674
 pw : 12345678
